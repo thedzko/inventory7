@@ -5,18 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="././css/styles.css">
     <title>Usuarios</title>
 </head>
 
 <body>
-    <!--
-        Nota: Afortunadamente utilicé una estructura idéntica para toda la página, es por eso que, aun si están estructurando un panel para listar contenido (Mauricio, Miguel, Andres) o visualizar un producto/proveedor en específico (Adriana, Luis), la estructura puede permanecer similar en el HTML. Pero en el caso de Luis y Adriana, el "right-content" funcionaría como un contenedor que ayude a mover su contenido por su padre "right" (para centrarlo fácilmente, por ejemplo).
-     -->
     <!-- Contenedor Padre -->
     <div class="container">
         <!-- Encabezado -->
-        <header class="header"></header>
+        <header class="header">
+            <a href="#">
+                <div class="header-logo"></div>
+            </a>
+            <div class="header-content">
+                <input type="text" class="header-content-search">
+
+                <a href="#" class="header-content-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/><path d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"/></svg>
+                    <h2>Editar información</h2>
+                </a>
+            </div>
+        </header>
 
         <!-- Contenido -->
         <div class="content">
