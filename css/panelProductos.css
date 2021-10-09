@@ -1,0 +1,445 @@
+/* Encabezado */
+
+.header {
+    background-color: var(--header-background-color);
+    display: flex;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Encabezado Izquierdo */
+
+.header-left {
+    width: 25%;
+    min-width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header-left-content {
+    height: 100%;
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.link-logo {
+    height: 38%;
+}
+
+.header-left-logo {
+    height: 100%;
+}
+
+
+/* Encabezado Derecho */
+
+.header-right {
+    height: 100%;
+    width: 75%;
+    justify-content: center;
+}
+
+.header-right-content {
+    height: 100%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right-search,
+.header-right-button {
+    height: 50%;
+}
+
+.header-right-search {
+    position: relative;
+    width: 30%;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.header-right-search>svg {
+    position: absolute;
+    height: 60%;
+    width: 10%;
+}
+
+.search-text {
+    height: 100%;
+    width: 100%;
+    padding: 0 1% 0 10%;
+    border: var(--panels-border);
+    border-radius: var(--panels-border-radius);
+    background-color: var(--header-search-background-color);
+    -webkit-appearance: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition-duration: var(--transition-hover-1);
+}
+
+.search-text::placeholder {
+    font-size: var(--font-size);
+    color: var(--header-search-font-color);
+    font-weight: var(--header-search-font-weight);
+}
+
+.header-right-button {
+    background-color: var(--header-button-background-color);
+    width: 18%;
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--panels-border-radius);
+    padding: 0 1% 0 1%;
+    transition-duration: var(--transition-hover-1);
+}
+
+.button-text {
+    font-size: var(--font-size);
+    color: var(--header-button-font-color);
+    font-weight: var(--header-button-font-weight);
+}
+
+
+/* Contentido */
+
+
+/* Panel Izquierdo */
+
+.content-left {
+    background-color: var(--sidepanel-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-content {
+    width: 100%;
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item {
+    width: 100%;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    padding: 0 6% 0 6%;
+}
+
+.item>h2 {
+    font-size: calc(var(--font-size)*1.25);
+    font-weight: var(--sidepanel-inactive-font-weight);
+    color: var(--sidepanel-font-inactive-color);
+    margin: 6% 0 6% 10%;
+}
+
+.item-2 {
+    border-left: var(--sidepanel-active-border);
+}
+
+.item-2>h2 {
+    font-weight: var(--sidepanel-active-font-weight);
+    color: var(--sidepanel-font-active-color);
+}
+
+.bottom-content {
+    display: flex;
+    justify-content: center;
+}
+
+.content-container {
+    position: relative;
+    height: 100%;
+    width: 85%;
+    min-width: 100px;
+    display: flex;
+}
+
+.content-container::before {
+    content: "";
+    border: 1px solid transparent;
+    border-top: var(--sidepanel-border);
+    position: absolute;
+    top: -40%;
+    height: 100%;
+    width: 100%;
+}
+
+.content-container>div {
+    height: 100%;
+}
+
+.container-img {
+    width: 24%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img-profile {
+    border-radius: 50%;
+    width: 66px;
+    width: 66px;
+}
+
+.container-text {
+    width: 56%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-role {
+    font-size: var(--font-size);
+    font-weight: var(--sidepanel-inactive-font-weight);
+    color: var(--sidepanel-font-inactive-color);
+}
+
+.text-name {
+    margin-top: 3%;
+    font-size: calc(var(--font-size)*1.25);
+    font-family: var(--font);
+    color: var(--sidepanel-font-active-color);
+    line-height: calc(var(--font-size)*1.45);
+}
+
+.container-icon {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-icon>a {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-svg {
+    fill: var(--sidepanel-font-inactive-color);
+}
+
+
+/* Panel Derecho */
+
+.content-right {
+    border: 1px solid transparent;
+    border-top: var(--panels-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-content {
+    background-color: var(--dashboard-background-color);
+    height: 93%;
+    width: 94%;
+    border: var(--panels-border);
+    border-radius: var(--panels-border-radius);
+    display: grid;
+    grid-template-rows: minmax(45px, 8%) calc(78.5vh - 59px) minmax(50px, 9%);
+}
+
+.right-content h2 {
+    color: var(--dashboard-font-color);
+}
+
+
+/* Tabla */
+
+
+/* Encabezado */
+
+.thead {
+    border-bottom: var(--panels-border);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.thi {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thi h2 {
+    font-size: var(--font-size);
+    font-weight: var(--dashboard-header-font-weight);
+}
+
+
+/* Cuerpo */
+
+.tbody {
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.tcontent {
+    border: 1px solid transparent;
+    border-bottom: var(--panels-border);
+    height: 17%;
+    min-height: 95px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.tci {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tci h2 {
+    font-size: var(--font-size);
+    font-weight: var(--dashboard-content-font-weight);
+}
+
+.tci-1 a {
+    height: 84px;
+    width: 84px;
+}
+
+.tci-img {
+    height: 84px;
+    width: 84px;
+    border-radius: var(--panels-border-radius);
+}
+
+.tci-7 div {
+    height: 36px;
+    width: 36px;
+    border-radius: var(--panels-border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tci-edit {
+    fill: var(--dashboard-button-edit-color);
+}
+
+.tci-edit-container {
+    background-color: var(--dashboard-button-edit-background-color);
+}
+
+.tci-del {
+    fill: var(--dashboard-button-del-color);
+}
+
+.tci-del-container {
+    margin-left: 12%;
+    background-color: var(--dashboard-button-del-background-color);
+}
+
+
+/* Pie de tabla */
+
+.tfoot {
+    border: 1px solid transparent;
+    border-top: var(--panels-border);
+    display: grid;
+    grid-template-columns: 83% 17%;
+}
+
+.tfoot-content {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tfoot-content h2 {
+    font-size: var(--font-size);
+    font-weight: var(--dashboard-foot-font-weigth);
+    color: var(--dashboard-foot-font-color)
+}
+
+
+/* Hover & Focus Effects */
+
+
+/* Header */
+
+.header-right-button:hover {
+    box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.35);
+}
+
+.search-text:hover {
+    box-shadow: 0 2px 6px 1px rgba(230, 230, 230, 0.85);
+}
+
+.item:hover,
+.container-icon>a:hover {
+    background-color: var(--sidepanel-active-background-color);
+}
+
+.tci-edit-container:hover {
+    background-color: #BDBDBD;
+}
+
+.tci-del-container:hover {
+    background-color: #B50D0D;
+}
+
+
+/* Extras */
+
+
+/* Scroll Handle */
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #d7d7d7;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #808080;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
