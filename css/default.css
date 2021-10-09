@@ -17,6 +17,7 @@
     --font-bold: 700;
     --panels-border-radius: 4px;
     --panels-border: 1px solid #d7d7d7;
+    --transition-hover-1: 0.5s;
     /* Font */
     --font-size: 1rem;
     --font-family: "Epilogue", sans-serif;
@@ -31,6 +32,8 @@
     --dashboard-font-color: #000000;
     --dashboard-header-font-weight: var(--font-semibold);
     --dashboard-content-font-weight: var(--font-regular);
+    --dashboard-foot-font-color: #808080;
+    --dashboard-foot-font-weigth: var(--font-semibold);
     /* Header */
     /* --header-left-logo: url(/img/logo.svg); */
     --header-background-color: #ffffff;
@@ -38,12 +41,18 @@
     --header-search-background-color: #e6e6e6;
     --header-button-background-color: #000000;
     /* Sidepanel */
-    --side-panel-background-color: #000000;
-    --side-panel-active-background-color: #0A0A0A;
+    --sidepanel-background-color: #000000;
+    --sidepanel-active-border: 3px solid #ffffff;
+    --sidepanel-active-background-color: #0A0A0A;
+    --sidepanel-border: 1px solid var(--sidepanel-font-inactive-color);
     /* Content */
     --content-background-color: #e6e6e6;
     /* Dashboard */
-    --dashboard-background-color: #000000;
+    --dashboard-background-color: #ffffff;
+    --dashboard-button-edit-color: #808080;
+    --dashboard-button-edit-background-color: #d7d7d7;
+    --dashboard-button-del-color: #ffffff;
+    --dashboard-button-del-background-color: #CF0E0E;
     /* Body */
     font-family: var(--font-family);
 }
@@ -58,10 +67,11 @@ body {
     display: grid;
     width: 100%;
     height: 100%;
-    grid-template-rows: 8vh 1fr;
+    grid-template-rows: minmax(60px, 8vh) 1fr;
 }
 
 .content {
+    background-color: var(--content-background-color);
     display: grid;
-    grid-template-columns: 25% 1fr;
+    grid-template-columns: minmax(300px, 25%) minmax(720px, 1fr);
 }
