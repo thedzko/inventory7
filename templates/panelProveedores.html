@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Proveedores</title>
+    <link rel="stylesheet" href="../static/css/panelProveedores.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header class="header">
+        <img class="header__logo" src="../static/img/Ssangyong_logo.png" alt="">
+        <span class="header__search">
+            <img class="header__search-icon" src="../static/img/search_icon.png" alt="">
+            <input class="header__search-input" type="search" name="" id="" value="Buscar Proveedores">
+        </span>
+        <span class="header__button">
+            <img class="header__button-icon" src="../static/img/add_icon.png" alt="">
+            <input class="header__button-input" type="button" value="Nuevo Proveedor">
+        </span>
+    </header>
+    <aside class="aside">
+        <ul class="aside__menu-container">
+            <span class="aside__menu aside__menu-users">
+                <img class="aside_menu-icon" src="../static/img/usuarios.png" alt="">
+                <li >Usuarios</li>
+            </span>
+            <span class="aside__menu aside__menu-products">
+                <img class="aside_menu-icon" src="../static/img/productos.png" alt="">
+                <li >Productos</li>
+            </span>
+            <span class="aside__menu aside__menu-providers">
+                <img class="aside_menu-icon" src="../static/img/proveedores.png" alt="">
+                <li >Proveedores</li>
+            </span>
+        </ul>
+        <div class="aside__user">
+            <hr class="aside__user-div">
+            <div class="aside__user-container">
+                <img class="aside__user-img" src="../static/img/user_icon.png" alt="">
+                <div class="aside__user-id">
+                    <h5 class="aside__user-rol">Rol</h5>
+                    <p class="aside__user-name">Nombre y Apellido usuario</p>
+                </div>
+                <img class="aside__user-icon" src="../static/img/user_info.png" alt="">
+            </div>
+        </div>
+    </aside>
+    <main class="main">
+        <div class="main__container">
+            <div class="main__table main__title">
+                <h4>Foto</h4>
+                <h4>Nombre</h4>
+                <h4>Productos</h4>
+                <h4>Teléfono</h4>
+                <h4>Celular</h4>
+                <h4>ID</h4>
+                <h4>Acciones</h4>
+            </div>
+            <div class="main__table main__body">
+                <img class="main__body-img" src="../static/img/yokohama_logo.png" alt="">
+                <p>YOKOHAMA</p>
+                <ul class="main__body-products">
+                    <li>Summer Tires</li>
+                    <li>Performance Tires</li>
+                    <li>Tourist Tires</li>
+                </ul>
+                <p>246-4584</p>
+                <p>(14)-275-585-4585</p>
+                <p>10085</p>
+                <div class="main__table-actions">
+                    <a class="main__body-icon--edit" href="">
+                        <img class="main__body-icon" src="../static/img/editar_icon.png" alt="">
+                    </a>
+                    <a class="main__body-icon--delete" href="">
+                        <img class="main__body-icon" src="../static/img/eliminar_icon.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="main__table main__footer">
+                <p class="main__footer-text">16 items</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
