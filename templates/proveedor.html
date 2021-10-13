@@ -5,75 +5,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="#">
-    <title>Proveedor</title>
+    <link rel="stylesheet" href="../static/css/producto.css"> 
+    <title>Ver proveedor</title>
 </head>
-
+   
 <body>
-    <!--
-        Nota: Afortunadamente utilicé una estructura idéntica para toda la página, es por eso que, aun si están estructurando un panel para listar contenido (Mauricio, Miguel, Andres) o visualizar un producto/proveedor en específico (Adriana, Luis), la estructura puede permanecer similar en el HTML. Pero en el caso de Luis y Adriana, el "right-content" funcionaría como un contenedor que ayude a mover su contenido por su padre "right" (para centrarlo fácilmente, por ejemplo).
-     -->
     <!-- Contenedor Padre -->
     <div class="container">
         <!-- Encabezado -->
-        <header class="header"> 
-            <div class="LogoSsangYong"> 
-                <img src="" alt="Logo SsangYong">
-                <h1>SsangYong</h1>
+        <header class="header">
+            <!-- Contenido izquierdo -->
+            <div class="header-left">
+                <div class="header-left-content">
+                    <a href="" class="link-logo">
+                        <img src="../static/img/logo.svg" alt="" class="header-left-logo">
+                    </a>
+                </div>
             </div>
-            
-            <div>
-                <button> <img src="https://ayudawp.com/wp-content/uploads/2018/04/borrar-plugins-wordpress.png" alt="" width="20"
-                        height="20"></button>
-                <button> <img src="https://w7.pngwing.com/pngs/740/67/png-transparent-computer-icons-icon-design-edit-angle-computer-data-thumbnail.png"
-                        alt="" width="20" height="20"> Editar información </button>
+            <!-- Contenido derecho -->
+            <div class="header-right">
+                <!-- Contenedor -->
+                <div class="header-right-content">
+                    <!-- Boton Eliminar -->
+                    <button>
+                        <img class='btn-delete' src="../static/img/icon2.png" height="24px" viewBox="0 0 24 24"
+                            width="24px" fill="var(--header-search-font-color)">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                        </img>
+                    </button>
+                    <!-- Botón Editar -->
+                    <button href="#" class="header-right-button">
+                        <img src="../static/img/Vector.png" height="20px" viewBox="0 0 24 24" width="20px"
+                            fill="var(--header-button-font-color)" class="button-logo">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path
+                            d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z" />
+                        </img>
+                        <h2 class="button-text">Editar información</h2>
+                    </button>
+                </div>
             </div>
-            
         </header>
 
         <!-- Contenido -->
         <div class="content">
 
             <!-- Panel izquierdo -->
-            <div class="left">
+            <div class="content-left">
 
                 <!-- Navegación -->
-                <div>
-                    <button> volver </button>
+                <div class=content-left-back-button>
+                    <button href="#" class="button-back">
+                        <img src="../static/img/atras.png" height="20px" viewBox="0 0 24 24" width="20px"
+                            fill="var(--header-button-font-color)" class="button-logo">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path
+                            d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z" />
+                        </img>
+                        <h2 class="button-text">volver</h2>
+                    </button>
                 </div>
-    
+
 
                 <!-- Perfil -->
-                <div>
-                    <img src="https://1000marcas.net/wp-content/uploads/2020/11/Yokohama-Logo.png" alt="" width="300" height="400">
-                    <button> Cambiar imagen </button>
-                </div>
+                <form action="prueba.php" method="post" id="frm-test">
+                    <div class=form-image>
+                        <input type="image" type="file" alt="" width="300" height="280">
+                        <button accept="image/jpg, image/jpeg, image/png, image/weebp, image/JPG, image/PNG, image/WEBP"
+                            type="file" class='btn-image'> Cambiar imagen </button>
+                    </div>
+                </form>
             </div>
 
-            <!-- Panel derecho -->
-            <div class="right">
 
+            <!-- Panel derecho -->
+            <div class="content-right">
                 <!-- Panel hijo -->
                 <div class="right-content">
-                    <div class="Nombre_proveedor">
-                        <input type="text" size="50" maxlength="40" value="Nombre del proveedor" name="nombreProvedor"> 
-                        <label for=""> Identificador </label>
-                    </div>
 
-                    <div class="DatosProveedor">
-                        <input type="mail" size="30" maxlength="40" value="Correo electronico" name="Correo">
-                        <input type="int" size="20" maxlength="40" value="Telefono" name="Telefono">
-                        <input type="int" size="20" maxlength="40" value="Celular" name="Celular">
-                        <input type="text" size="20" maxlength="40" value="Ubicación" name="Ubicacion">
-                    </div>
-                        <input type="text" size="50" maxlength="100" value="Productos Ofrecidos" name="
-                        productosOfrecidos">
-                    <div >
-
-                        <button> Guardar </button>
-                        <button> Cancelar </button>
-                        
-                    </div>
+                    <form action="prueba.php" method="post" id="frm-test">
+                        <div class="form-group">
+                            <input type="text" class="right-content-proveedor" placeholder="Nombre del proveedor">
+                            <input type="text" class="right-content-id" placeholder="Identificador">
+                            <input type="text" class="right-content-correo" placeholder="Correo electronico">
+                            <input type="text" class="right-content-telefono" placeholder="Telefono">
+                            <input type="text" class="right-content-celular" placeholder="Celular">
+                            <input type="text" class="right-content-ubicacion" placeholder="Ubicacion">
+                            <input type="text" class="right-content-productos-ofrecidos" placeholder="Productos ofrecidos">
+                            <button type="submit" class="btn-enviar" id="btn-enviar" value="Guardar">Enviar</button>
+                            <button type="reset" class="btn-cancelar" id="btn-cancelar"
+                                value="Cancelar">Cancelar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
