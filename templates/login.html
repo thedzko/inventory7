@@ -1,35 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="#">
-    <title>Log in</title>
-</head>
-<body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario Login</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+  </head>
+  <body>
+    <form class="form-login" action="prueba.php" method="post">
+      <img class="img" src=../static/img/logo.svg ></img>
+      <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
+      <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
+      <button class="buttons" type="submit" name="">Iniciar sesión</button>
+      <p><a href="#">Create an Account</a></p>
+      <h5>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply<h5>
 
-    <div class="Content">
-        <div class="Form">
-            <div class="Logo">
-                <img src="../static/img/logo.svg" alt="">
-            </div>
-    
-            <form class="baseFormulario" method="get" action='Productos'>
-                <p class="Username">
-                    <h3>Nombre de usuario</h3>
-                    <input name='Username' type="text">
-                </p>
-                <p class="Password">
-                    <h3>Constraseña</h3>
-                    <input name='Password'type="password">
-                </p>
-                <p>
-                    <button type="submit" class="LoginButtom"> Iniciar Sesion </button>
-                </p>
-            </form>        
+      </form>
 
-        </div>
-    </div>
-</body>
+  </body>
 </html>
