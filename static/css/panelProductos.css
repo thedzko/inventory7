@@ -331,6 +331,7 @@
     height: 84px;
     width: 84px;
     border-radius: var(--panels-border-radius);
+    object-fit: cover;
 }
 
 .tci-7 div {

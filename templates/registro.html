@@ -1,23 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="../static/css/registro.css">
-  <title> Registro</title>
+    <meta charset="utf-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../static/css/default.css">
+    <link rel="stylesheet" href="../static/css/registro.css">
 </head>
+
 <body>
-  <section class="form-register">
-    <img class="img" src=../static/img/logo.svg ></img>
-    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
-    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
-    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo Insitucional">
-    <input class="controls" type="password" name="correo" id="correo" placeholder="Identificación">
-    <input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña">
-    <input class="buttons" type="submit" value="Registrar">
-    <p><a href="#">¿Ya tengo Cuenta?</a></p>
-  </section>
+    <div class="form-section">
+        <div class="form-container">
+            <div class="form-content">
+                <div class="form-logo">
+                    <img class="img" src=../static/img/logo.svg></img>
+                </div>
+                <div class="form-inputs">
+                    <form class="form-login" action="prueba.php" method="post">
+                        <div class="login-item i-nombre">
+                            <input type="text" name="usuario" value="" id="usuario" required>
+                            <label for="usuario">Ingrese su nombre</label>
+                        </div>
+                        <div class="login-item i-lastname">
+                            <input name="lastname" value="" id="lastname" required>
+                            <label for="lastname">Ingrese su apellido</label>
+                        </div>
+                        <div class="login-item i-email">
+                            <input name="email" value="" id="email" required>
+                            <label for="email">Ingrese su correo institucional</label>
+                        </div>
+                        <div class="login-item i-password">
+                            <input type="password" name="password" value="" id="password" required>
+                            <label for="password">Cree una contraseña</label>
+                        </div>
+                        <div class="login-item i-login">
+                            <button class="button-1" type="submit" name="">Registrar</button>
+                        </div>
+                        <div class="login-text">
+                            <a href="#" class="text-policy">¿Ya tienes una cuenta?
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 </body>
+
 </html>

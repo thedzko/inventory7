@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Formulario Login</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/default.css">
     <link rel="stylesheet" href="../static/css/login.css">
-  </head>
-  <body>
-    <form class="form-login" action="prueba.php" method="post">
-      <img class="img" src=../static/img/logo.svg ></img>
-      <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
-      <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
-      <button class="buttons" type="submit" name="">Iniciar sesión</button>
-      <p><a href="#">Create an Account</a></p>
-      <h5>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply<h5>
+</head>
 
-      </form>
+<body>
+    <div class="form-section">
+        <div class="form-container">
+            <div class="form-content">
+                <div class="form-logo">
+                    <img class="img" src=../static/img/logo.svg></img>
+                </div>
+                <div class="form-inputs">
+                    <form class="form-login" action="prueba.php" method="post">
+                        <div class="login-item i-user">
+                            <input type="text" name="usuario" value="" id="usuario" required>
+                            <label for="usuario">Usuario</label>
+                        </div>
+                        <div class="login-item i-password">
+                            <input type="password" name="contrasena" value="" id="password" required>
+                            <label for="password">Contraseña</label>
+                        </div>
+                        <div class="login-item i-login">
+                            <button class="button-1" type="submit" name="">Crear cuenta</button>
+                            <button class="button-2" type="submit" name="">Iniciar sesión</button>
+                        </div>
+                        <div class="login-text">
+                            <p class="text-policy">This site is protected by reCAPTCHA and the <b>SsangYong Motors Privacy Policy and Terms of Service</b> apply.
+                            </p>
+                        </div>
 
-  </body>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
 </html>

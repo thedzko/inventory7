@@ -314,6 +314,7 @@
 .tci h2 {
     font-size: var(--font-size);
     font-weight: var(--dashboard-content-font-weight);
+    text-align: center;
 }
 
 .tci-1 a {
@@ -325,6 +326,7 @@
     height: 84px;
     width: 84px;
     border-radius: var(--panels-border-radius);
+    object-fit: cover;
 }
 
 .tci-6 div {
@@ -384,11 +386,11 @@
 /* Header */
 
 .header-right-button:hover {
-    box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.35);
+    box-shadow: var(--button-box-shadow);
 }
 
 .search-text:hover {
-    box-shadow: 0 2px 6px 1px rgba(230, 230, 230, 0.85);
+    box-shadow: var(--input-text-box-shadow);
 }
 
 .search-text:focus {
@@ -408,7 +410,7 @@
 }
 
 .tci-del-container:hover {
-    background-color: #B50D0D;
+    background-color: var(--dashboard-hover-button-del-background-color);
 }
 
 
