@@ -1,53 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>Registro</title>
-    <link rel="stylesheet" href="../static/css/default.css">
-    <link rel="stylesheet" href="../static/css/registro.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/estilos.css">
+    <title> Registro de Usuarios</title>
 </head>
 
-<body>
-    <div class="form-section">
-        <div class="form-container">
-            <div class="form-content">
-                <div class="form-logo">
-                    <img class="img" src=../static/img/logo.svg></img>
-                </div>
-                <div class="form-inputs">
-                    <form class="form-login" action="prueba.php" method="post">
-                        <div class="login-item i-nombre">
-                            <input type="text" name="usuario" value="" id="usuario" required>
-                            <label for="usuario">Ingrese su nombre</label>
-                        </div>
-                        <div class="login-item i-lastname">
-                            <input name="lastname" value="" id="lastname" required>
-                            <label for="lastname">Ingrese su apellido</label>
-                        </div>
-                        <div class="login-item i-email">
-                            <input name="email" value="" id="email" required>
-                            <label for="email">Ingrese su correo institucional</label>
-                        </div>
-                        <div class="login-item i-password">
-                            <input type="password" name="password" value="" id="password" required>
-                            <label for="password">Cree una contraseña</label>
-                        </div>
-                        <div class="login-item i-login">
-                            <button class="button-1" type="submit" name="">Registrar</button>
-                        </div>
-                        <div class="login-text">
-                            <a href="#" class="text-policy">¿Ya tienes una cuenta?
-                            </a>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-
+{% block content %}
+    <form class="form2" action=""  method="post">
+        {{ frm.hidden_tag() }}
+        <img class="img" src=../static/img/logo.svg ></img>
+        <p>
+            {{ frm.id(class="controls")}}
+            {% for error in frm.id.errors %}
+        <div>
+            {{ error }}
         </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ frm.nombre(class="controls")}}
+            {% for error in frm.nombre.errors %}
+        <div>
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ frm.username(class="controls") }}
+            {% for error in frm.username.errors %}
+        <div>
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ frm.correo(class="controls") }}
+            {% for error in frm.correo.errors %}
+        <div>
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ frm.password(class="controls") }}
+            {% for error in frm.password.errors %}
+        <div>
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ frm.registrar(class="buttons") }}
+        </p>
+        <s><a href="{{url_for('home')}}">¿ya tengo cuenta?</a></s>
+    </form>
+    {% for msg in get_flashed_messages() %}
+    <div>
+        {{ msg }}
     </div>
-
-</body>
-
-</html>
+    {% endfor %}
+{% endblock %}

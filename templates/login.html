@@ -1,46 +1,45 @@
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="../static/css/default.css">
-    <link rel="stylesheet" href="../static/css/login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/estilos.css">
+    <title> Autenticacion de Usuarios</title>
 </head>
-
-<body>
-    <div class="form-section">
-        <div class="form-container">
-            <div class="form-content">
-                <div class="form-logo">
-                    <img class="img" src=../static/img/logo.svg></img>
-                </div>
-                <div class="form-inputs">
-                    <form class="form-login" action="prueba.php" method="post">
-                        <div class="login-item i-user">
-                            <input type="text" name="usuario" value="" id="usuario" required>
-                            <label for="usuario">Usuario</label>
-                        </div>
-                        <div class="login-item i-password">
-                            <input type="password" name="contrasena" value="" id="password" required>
-                            <label for="password">Contraseña</label>
-                        </div>
-                        <div class="login-item i-login">
-                            <button class="button-1" type="submit" name="">Crear cuenta</button>
-                            <button class="button-2" type="submit" name="">Iniciar sesión</button>
-                        </div>
-                        <div class="login-text">
-                            <p class="text-policy">This site is protected by reCAPTCHA and the <b>SsangYong Motors Privacy Policy and Terms of Service</b> apply.
-                            </p>
-                        </div>
-
-                    </form>
-                </div>
+<body> 
+        <form  action="" method="post">
+            {{ frm.hidden_tag() }}
+            <img class="img" src=../static/img/logo.svg ></img>
+            <p>
+                {{ frm.username (class="controls")}}
+                {% for error in frm.username.errors %}
+            <div>
+                {{ error }}
             </div>
-
+            {% endfor %}
+            </p>
+            <p>
+                {{ frm.password (class="controls")}}
+                {% for error in frm.password.errors %}
+            <div>
+                {{ error }}
+            </div>
+            {% endfor %}
+            </p>
+            <p>
+                {{ frm.entrar (class="buttons") }}
+            </p>
+            <s><a href="{{url_for('registrar')}}">Registrarse</a></s>
+        </form> 
+        {% for msg in get_flashed_messages() %}
+        <div>
+            {{ msg }}
         </div>
-    </div>
-
+        {% endfor %} 
 </body>
-
 </html>
+
+
+
