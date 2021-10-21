@@ -53,6 +53,14 @@
         {% endfor %}
         </p>
         <p>
+            {{ frm.perfil(class="controls") }}
+            {% for error in frm.perfil.errors %}
+        <div>
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
             {{ frm.registrar(class="buttons") }}
         </p>
         <s><a href="{{url_for('home')}}">¿ya tengo cuenta?</a></s>

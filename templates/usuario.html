@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/producto.css">
-    <title>ver producto</title>
+    <title>ver usuario</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
             <!-- Contenedor -->
             <div class="header-right-content">
                 {%if session.perfil== "usuario" %}
-                    hola Usuario
+                    Hola Usuario
                 {%else%}
                     Hola, Administrador
                 {%endif%}
@@ -80,7 +80,15 @@
                         <div class="form-group">
                             {{ frm.hidden_tag() }}
                             <p>
-                                {{ frm.nombre (class="right-content-product") }}
+                                {{ frm.id(class="control-usuarios")}}
+                                {% for error in frm.id.errors %}
+                            <div>
+                                {{ error }}
+                            </div>
+                            {% endfor %}
+                            </p>
+                            <p>
+                                {{ frm.nombre(class="control-usuarios")}}
                                 {% for error in frm.nombre.errors %}
                             <div>
                                 {{ error }}
@@ -88,53 +96,32 @@
                             {% endfor %}
                             </p>
                             <p>
-                                {{ frm.identificador (class="right-content-id")}}
-                                {% for error in frm.identificador.errors %}
-                            <div>
-                                {{ error }}
-                            </div>
-                            {% endfor %}
-                            </p>
-                                    
-                            <p>
-                                {{ frm.proveedores (class="right-content-proveedores") }}
-                                {% for error in frm.proveedores.errors %}
+                                {{ frm.username(class="control-usuarios") }}
+                                {% for error in frm.username.errors %}
                             <div>
                                 {{ error }}
                             </div>
                             {% endfor %}
                             </p>
                             <p>
-                                {{ frm.cantidad_disp (class="right-content-cantidad-dis") }}
-                                {% for error in frm.cantidad_disp.errors %}
+                                {{ frm.correo(class="control-usuarios") }}
+                                {% for error in frm.correo.errors %}
                             <div>
                                 {{ error }}
                             </div>
                             {% endfor %}
+                            </p>
                             <p>
-                                {{ frm.cantidad_min (class="right-content-cantidad-min") }}
-                                {% for error in frm.cantidad_min.errors %}
+                                {{ frm.password(class="control-usuarios") }}
+                                {% for error in frm.password.errors %}
                             <div>
                                 {{ error }}
                             </div>
                             {% endfor %}
+                            </p>
                             <p>
-                                {{ frm.descripcion (class="right-content-texteditor") }}
-                                {% for error in frm.descripcion.errors %}
-                            <div>
-                                {{ error }}
-                            </div>
-                            {% endfor %}
-                            <p>
-                                {{ frm.retail_price (class="right-content-retail-price") }}
-                                {% for error in frm.retail_price.errors %}
-                            <div>
-                                {{ error }}
-                            </div>
-                            {% endfor %}
-                            <p>
-                                {{ frm.trade_price (class="right-content-trade-price") }}
-                                {% for error in frm.trade_price.errors %}
+                                {{ frm.perfil(class="control-usuarios") }}
+                                {% for error in frm.perfil.errors %}
                             <div>
                                 {{ error }}
                             </div>

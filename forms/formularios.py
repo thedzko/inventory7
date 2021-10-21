@@ -24,7 +24,10 @@ class Registro(FlaskForm):
         DataRequired(message="Correo es obligatorio")], render_kw={"placeholder": "Correo Institucional"})
     password = PasswordField("Password", validators=[
         DataRequired(message="Password es obligatorio")], render_kw={"placeholder": "Contraseña"})
+    perfil = SelectField("Perfiles", choices=[("administrador", "administrador"), ("usuario", "usuario")])
+    
     registrar = SubmitField("Registrar")
+
 
 class Productos(FlaskForm):
     identificador = StringField("Código", render_kw={"placeholder": "Identificador",})
@@ -40,4 +43,33 @@ class Productos(FlaskForm):
     consultar = SubmitField("Consultar", render_kw=({"onfocus":"cambiarRuta('/producto/get')"}))
     eliminar = SubmitField("eliminar", render_kw=({"onfocus":"cambiarRuta('/producto/delete')"}))
     editar = SubmitField("Editar Información", render_kw=({"onfocus":"cambiarRuta('/producto/update')"}))
-    
+
+#---------------------------------------------------------------------
+
+class Proveedores(FlaskForm):
+    identificador = StringField("Código", render_kw={"placeholder": "Identificador",})
+    nombre = StringField("Nombre", render_kw={"placeholder": "Nombre Proveedor"})
+    correo = StringField("corre", render_kw={"placeholder": "Correo"})
+    telefono = StringField("telefono.", render_kw={"placeholder": "Telefono."})
+    celular = StringField("Celular.", render_kw={"placeholder": "Celular."})
+    productos = TextAreaField("productos", render_kw={"placeholder": "Productos."})
+    ubicacion = TextAreaField("ubicacion.", render_kw={"placeholder": "Ubicacion."})
+
+    enviar = SubmitField("Enviar", render_kw=({"onfocus":"cambiarRuta('/proveedor/save')"}))
+    consultar = SubmitField("Consultar", render_kw=({"onfocus":"cambiarRuta('/proveedor/get')"}))
+    eliminar = SubmitField("eliminar", render_kw=({"onfocus":"cambiarRuta('/proveedor/delete')"}))
+    editar = SubmitField("Editar Información", render_kw=({"onfocus":"cambiarRuta('/proveedor/update')"}))
+
+#-------usuarios------------------------------------------------------------------
+class Usuarios(FlaskForm):
+    id = StringField("Nombre",  render_kw={"placeholder": "Identificación"})
+    nombre = StringField("Nombre", render_kw={"placeholder": "Nombre"})
+    username = StringField("Usuario", render_kw={"placeholder": "Username"})
+    correo = StringField("Correo",  render_kw={"placeholder": "Correo Institucional"})
+    password = PasswordField("Password", render_kw={"placeholder": "Contraseña"})
+    perfil = SelectField("Perfiles", choices=[("administrador", "administrador"), ("usuario", "usuario")])
+
+    enviar = SubmitField("Enviar", render_kw=({"onfocus":"cambiarRuta('/usuario/save')"}))
+    consultar = SubmitField("Consultar", render_kw=({"onfocus":"cambiarRuta('/usuario/get')"}))
+    eliminar = SubmitField("eliminar", render_kw=({"onfocus":"cambiarRuta('/usuario/delete')"}))
+    editar = SubmitField("Editar Información", render_kw=({"onfocus":"cambiarRuta('/usuario/update')"}))
