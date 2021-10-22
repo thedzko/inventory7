@@ -35,7 +35,7 @@ def home():
     return render_template("login.html", frm=frm)
 
 #API para registrarse
-@app.route("/Registrarse", methods=["GET", "POST"])#ruta
+@app.route("/registrarse", methods=["GET", "POST"])#ruta
 def registrar():#enpoint
     frm= Registro()#instancia el clase Registro
     #valida los datos del formulario
@@ -68,7 +68,7 @@ def registrar():#enpoint
     return render_template("registro.html", frm=frm)
 
 #---------------Rutas--------------------------------------
-@app.route("/Productos", methods = ["GET", "POST"])
+@app.route("/productos", methods = ["GET", "POST"])
 def prod():
     #if 'usuario' in session:
     if 'usuario' in session:
@@ -76,7 +76,7 @@ def prod():
         return render_template("producto.html", frm=producto)
     #return redirect("/")
 
-@app.route("/Proveedores", methods = ["GET", "POST"])
+@app.route("/proveedores", methods = ["GET", "POST"])
 def prove():
     #if 'usuario' in session and session["perfil"]=="admministrador":
     #if 'usuario' in session:
@@ -84,7 +84,7 @@ def prove():
         return render_template("proveedor.html", frm=proveedores)
     #return redirect("/")
 
-@app.route("/Usuarios", methods = ["GET", "POST"])
+@app.route("/usuarios", methods = ["GET", "POST"])
 def usu():
     #if 'usuario' in session and session["perfil"]=="admministrador":
     if 'usuario' in session:
@@ -94,7 +94,7 @@ def usu():
 #--------------------------------------------------------------------------------------------------
 
 #----Producto-------------------------------------------------------------------------------------
-@app.route("/Producto/save", methods = ["POST"])
+@app.route("/producto/save", methods = ["POST"])
 def prod_save():
     #if 'usuario' in session and session["perfil"]=="admministrador" :
     if 'usuario' in session:
@@ -122,7 +122,7 @@ def prod_save():
 
     return redirect("/")
 
-@app.route("/Producto/get", methods = ["POST"])
+@app.route("/producto/get", methods = ["POST"])
 def prod_get():
     #if 'usuario' in session and session["perfil"]=="admministrador":
     if 'usuario' in session:
@@ -151,7 +151,7 @@ def prod_get():
         return render_template("producto.html", frm=producto)
     
 
-@app.route("/Producto/update", methods=["POST"])
+@app.route("/producto/update", methods=["POST"])
 def prod_update():
     #if 'usuario' in session and session["perfil"]=="admministrador":
     if 'usuario' in session:
@@ -181,7 +181,7 @@ def prod_update():
         return render_template ("producto.html", frm=frm)
     return redirect("/")
 
-@app.route("/Producto/delete", methods = ["POST"])
+@app.route("/producto/delete", methods = ["POST"])
 def prod_delete():
     #if 'usuario' in session and session["perfil"]=="admministrador":
     if 'usuario' in session:
@@ -203,7 +203,7 @@ def prod_delete():
     return redirect("/")
 #------------------------------------------------------------------------------------------------------
 #-----proveedores--------------------------------------------------------------------------------------
-@app.route("/Proveedor/save", methods = ["POST"])
+@app.route("/proveedor/save", methods = ["POST"])
 def prove_save():
     #if 'usuario' in session and session["perfil"]=="admministrador":
     if 'usuario' in session:
@@ -231,7 +231,7 @@ def prove_save():
 
     return redirect("/")
 
-@app.route("/Proveedor/get", methods = ["POST"])
+@app.route("/proveedor/get", methods = ["POST"])
 def prove_get():
     #if 'usuario' in session and session["perfil"]=="admministrador":
     if 'usuario' in session:
@@ -261,7 +261,7 @@ def prove_get():
     return redirect("/")
 
 
-@app.route("/Proveedor/update", methods=["POST"])
+@app.route("/proveedor/update", methods=["POST"])
 def prove_update():
     #if 'usuario' in session and session["perfil"]=="admministrador":
     if 'usuario' in session:
@@ -291,7 +291,7 @@ def prove_update():
         return render_template ("proveedor.html", frm=frm)
     #return redirect("/")
 
-@app.route("/Proveedor/delete", methods = ["POST"])
+@app.route("/proveedor/delete", methods = ["POST"])
 def prove_delete():
     if 'usuario' in session:
         frm = Proveedores()
@@ -314,7 +314,7 @@ def prove_delete():
 
 #-----usuarios---------------------------------------------------------------------------------------------------------
 
-@app.route("/Usuario/save", methods = ["POST"])
+@app.route("/usuario/save", methods = ["POST"])
 def usu_save():
     if 'usuario' in session:
         usuario= Usuarios()
@@ -348,7 +348,7 @@ def usu_save():
 
     #return redirect("/")
 
-@app.route("/Usuario/get", methods = ["POST"])
+@app.route("/usuario/get", methods = ["POST"])
 def usu_get():
     if 'usuario' in session:
         usuario = Usuarios()
@@ -375,7 +375,7 @@ def usu_get():
         return render_template("usuario.html", frm=usuario)
     #return redirect("/")
 
-@app.route("/Usuario/update", methods=["POST"])
+@app.route("/usuario/update", methods=["POST"])
 def usu_update():
     if 'usuario' in session:
         frm = Usuarios()
@@ -407,7 +407,7 @@ def usu_update():
         return render_template ("usuario.html", frm=frm)
 
 
-@app.route("/Usuario/delete", methods = ["POST"])
+@app.route("/usuario/delete", methods = ["POST"])
 def usu_delete():
     frm = Usuarios()
     id = escape(frm.id.data)
@@ -429,7 +429,7 @@ def usu_delete():
 
 
 
-@app.route("/Logout", methods=["GET"])
+@app.route("/logout", methods=["GET"])
 def logout():
     session.clear()
     return redirect ("/")
