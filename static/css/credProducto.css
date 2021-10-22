@@ -42,6 +42,7 @@
 /* Encabezado Derecho */
 
 .header-right {
+    display: none;
     height: 100%;
     width: 75%;
     justify-content: center;
@@ -340,8 +341,17 @@ button {
 
 .dbutton-2 {
     background-color: transparent;
-    color: var(--edit-off-color-delete-button);
     border: var(--edit-off-border-delete-button);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-hover-1);
+}
+
+.dbutton-2>h2 {
+    font-size: var(--font-size);
+    color: var(--edit-off-color-delete-button);
+    transition: var(--transition-hover-1);
 }
 
 
@@ -405,5 +415,9 @@ input:valid {
 
 .dbutton-2:hover {
     background-color: var(--edit-off-color-delete-button);
+    color: white;
+}
+
+.dbutton-2:hover h2 {
     color: white;
 }

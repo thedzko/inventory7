@@ -1,0 +1,98 @@
+ {% extends 'default.html'%}
+
+<!-- Head -->
+{% block head %}
+<link rel="stylesheet" href="../static/css/credUsuario.css">
+<title>Nuevo usuario</title>
+{% endblock %}
+
+<!-- Body -->
+{% block body %}
+<!-- Contenedor Padre -->
+<div class="container">
+    <!-- Encabezado -->
+    <header class="header">
+        <!-- Contenido izquierdo -->
+        <div class="header-left">
+            <div class="header-left-content">
+                <a href="/Productos" class="link-logo">
+                    <img src="../static/img/logo.svg" alt="" class="header-left-logo">
+                </a>
+            </div>
+        </div>
+        <!-- Contenido derecho -->
+        <div class="header-right">
+            <!-- Contenedor -->
+            <div class="header-right-content">
+                <!-- Boton Eliminar -->
+                <a href="#" class="header-right-button-delete">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" class="tci-del"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                </a>
+                <!-- Botón Editar -->
+                <a href="#" class="header-right-button">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="var(--header-button-font-color)"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                    <h2 class="button-text">Editar información</h2>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido -->
+    <div class="content">
+        <!-- Panel izquierdo -->
+        <div class="content-left">
+            <div class="left-content">
+                <nav class="top-content">
+                    <!-- Items -->
+                    <a href="/" class="item item-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="var(--sidepanel-font-active-color)"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                        <h2>Volver</h2>
+                    </a>
+                </nav>
+                <div class="bottom-content">
+                    <div class="content-image">
+                        <img src="" alt="" class="image-visualizer">
+                    </div>
+                    <div class="content-submit">
+                        <button accept="image/jpg, image/jpeg, image/png, image/weebp, image/JPG, image/PNG, image/WEBP" type="file" class='button-image'>Cambiar imagen</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- Panel derecho -->
+        <div class="content-right">
+            <!-- Panel hijo -->
+            <div class="right-content">
+                <form action="/newUser" method="post" id="frm-test">
+                    <div class="frow frow-1">
+                        <div class="fitem fitem1-1">
+                            <input type="text" name="username" id="username" required>
+                            <label for="username">Nombre del Usuario</label>
+                        </div>
+                        <div class="fitem fitem1-2">
+                            <input type="text" id="role" name="role" required>
+                            <label for="role">Rol</label>
+                        </div>
+                    </div>
+                    <div class="frow frow-4">
+                        <div class="fdiv fdiv-2">
+                            <button type="submit" class="dbutton dbutton-1">Guardar</button>
+                            <a href="/" class="dbutton dbutton-2">
+                                <h2>Cancelar</h2>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+</html>

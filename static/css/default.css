@@ -86,5 +86,5 @@ body {
 .content {
     background-color: var(--content-background-color);
     display: grid;
-    grid-template-columns: minmax(300px, 25%) minmax(720px, 1fr);
+    grid-template-columns: minmax(300px, 22%) minmax(720px, 1fr);
 }
