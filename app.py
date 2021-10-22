@@ -179,7 +179,7 @@ def panelProveedores():
     provider_data = cur.fetchall()
     return render_template('panelProveedores.html', providers = provider_data)
 
-# POST - PRODUCT
+# POST - PROVIDER
 @app.route('/newProvider/', methods=['GET','POST'])
 def crearProveedor():
     if request.method == 'POST':
@@ -191,7 +191,7 @@ def crearProveedor():
         location = request.form['location']        
         connectDB = sql_connection()
         cur = connectDB.cursor()
-        statement = "INSERT INTO products (providername, products, phone, celular, email, location VALUES (?, ?, ?, ?, ?, ?, ?)"
+        statement = "INSERT INTO providers (providername, products, phone, celular, email, location) VALUES (?, ?, ?, ?, ?, ?)"
         cur.execute(statement, [providername, products, phone, celular, email, location])
         connectDB.commit()
         cur.close
@@ -199,6 +199,54 @@ def crearProveedor():
     else:
         return render_template('crearProveedor.html')
 
+# GET(SHOW) - PROVIDER
+@app.route('/showprovider/<int:provider_id>', methods=['GET'])
+def verProveedor(provider_id):
+    connectDB = sql_connection()
+    cur = connectDB.cursor()
+    consulta = "SELECT * FROM providers WHERE provider_id=?"
+    cur = cur.execute(consulta, [provider_id])
+    provider_data = cur.fetchone()
+    cur.close
+    return render_template('verProveedor.html', providers = provider_data)
+
+# EDIT - PROVIDER
+@app.route('/editprovider/<int:provider_id>', methods=['GET', 'POST'])
+def editarProveedor(provider_id):
+    connectDB = sql_connection()
+    cur = connectDB.cursor()
+    consulta = "SELECT * FROM providers WHERE provider_id=?"
+    cur = cur.execute(consulta, [provider_id])
+    provider_data = cur.fetchone()
+    cur.close
+    return render_template('editarProveedor.html', providers = provider_data)
+
+# UPDATE - PROVIDER
+@app.route('/updateprovider/<int:provider_id>', methods=['GET', 'POST'])
+def actualizarProveedor(provider_id):
+    if request.method == 'POST':
+        connectDB = sql_connection()
+        providermame = request.form['providermame']
+        products = request.form['products']
+        phone = request.form['phone']
+        celular = request.form['celular']
+        email = request.form['email']
+        location = request.form['location']
+        cur = connectDB.cursor()
+        consulta = "UPDATE providers SET providermame = ?, products = ?, phone = ?, celular = ?, email = ?, location = ? WHERE provider_id = ?"
+        cur.execute(consulta, [providermame, products, phone, celular, email, location, provider_id])
+        connectDB.commit()
+        cur.close
+        return redirect(url_for('panelProveedores'))
+
+# DELETE - PROVIDER
+@app.route('/deleteprovider/<int:provider_id>/', methods=['GET', 'POST'])
+def borrarProveedor(provider_id):
+    connectDB = sql_connection()
+    cur = connectDB.cursor()
+    cur.execute('DELETE FROM providers WHERE provider_id={0}'.format(provider_id))
+    connectDB.commit()
+    return redirect(url_for('panelProveedores'))
 
 if __name__ == '__main__':
     app.debug = True

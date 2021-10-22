@@ -25,11 +25,11 @@
             <!-- Contenedor -->
             <div class="header-right-content">
                 <!-- Boton Eliminar -->
-                <a href="#" class="header-right-button-delete">
+                <a href="/deleteprovider/{{providers.0}}" class="header-right-button-delete">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" class="tci-del"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
                 </a>
                 <!-- Botón Editar -->
-                <a href="#" class="header-right-button">
+                <a href="/editprovider/{{providers.0}}" class="header-right-button">
 
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="var(--header-button-font-color)"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
                     <h2 class="button-text">Editar información</h2>
@@ -68,43 +68,45 @@
         <div class="content-right">
             <!-- Panel hijo -->
             <div class="right-content">
-                <form action="prueba.php" method="post" id="frm-test">
+                <form action="/newProvider/" method="post" id="frm-test">
                     <div class="frow frow-1">
                         <div class="fitem fitem1-1">
-                            <input type="text" id="i-user" required>
-                            <label for="i-user">Nombre del Proveedor</label>
+                            <input type="text" id="providername" name="providername" value="{{providers.1}}" required>
+                            <label for="providername">Nombre del Proveedor</label>
                         </div>
                         <div class="fitem fitem1-2">
-                            <h2>Identificador</h2>
+                            <h2>{{providers.0}}</h2>
                         </div>
                     </div>
                     <div class="frow frow-2">
                         <div class="fitem fitem2-1">
-                            <input type="text" id="i-providers" required>
-                            <label for="i-providers">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" value="{{providers.5}}" required>
+                            <label for="email">Correo Electrónico</label>
                         </div>
                         <div class="fitem fitem2-2">
-                            <input type="text" id="i-cdisp" required>
-                            <label for="i-cdisp">Teléfono</label>
+                            <input type="number" id="phone" name="phone" value="{{providers.3}}" required>
+                            <label for="phone">Teléfono</label>
                         </div>
                         <div class="fitem fitem2-3">
-                            <input type="text" id="i-cmin" required>
-                            <label for="i-cmin">Celular</label>
+                            <input type="number" id="celular" name="celular" value="{{providers.4}}" required>
+                            <label for="celular">Celular</label>
                         </div>
                         <div class="fitem fitem2-4">
-                            <input type="text" id="i-cmin" required>
-                            <label for="i-cmin">Ubicación</label>
+                            <input type="text" id="location" name="location" value="{{providers.6}}" required>
+                            <label for="location">Ubicación</label>
                         </div>
                     </div>
                     <div class="frow frow-3">
-                        <textarea name="" id="i-description" cols="30" rows="10" class="fitem fitem3-1" placeholder="Productos Ofrecidos"></textarea>
+                        <textarea name="products" id="products" cols="30" rows="10" class="fitem fitem3-1" placeholder="Productos Ofrecidos">{{providers.2}}</textarea>
                     </div>
-                    <div class="frow frow-4">
+                    <!-- <div class="frow frow-4">
                         <div class="fdiv fdiv-2">
                             <button type="submit" class="dbutton dbutton-1">Guardar</button>
-                            <button type="reset" class="dbutton dbutton-2">Cancelar</button>
+                            <a href="/proveedores/" class="dbutton dbutton-2">
+                                <h2>Cancelar</h2>
+                            </a>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>

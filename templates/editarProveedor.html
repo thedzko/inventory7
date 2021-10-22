@@ -68,36 +68,36 @@
         <div class="content-right">
             <!-- Panel hijo -->
             <div class="right-content">
-                <form action="/newProvider/" method="post" id="frm-test">
+                <form action="/updateprovider/{{providers.0}}" method="post" id="frm-test">
                     <div class="frow frow-1">
                         <div class="fitem fitem1-1">
-                            <input type="text" id="providername" name="providername" required>
+                            <input type="text" id="providername" name="providername" value="{{providers.1}}" required>
                             <label for="providername">Nombre del Proveedor</label>
                         </div>
                         <div class="fitem fitem1-2">
-                            <h2>Identificador</h2>
+                            <h2>{{providers.0}}</h2>
                         </div>
                     </div>
                     <div class="frow frow-2">
                         <div class="fitem fitem2-1">
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" value="{{providers.5}}" required>
                             <label for="email">Correo Electrónico</label>
                         </div>
                         <div class="fitem fitem2-2">
-                            <input type="number" id="phone" name="phone" required>
+                            <input type="number" id="phone" name="phone" value="{{providers.3}}" required>
                             <label for="phone">Teléfono</label>
                         </div>
                         <div class="fitem fitem2-3">
-                            <input type="number" id="celular" name="celular" required>
+                            <input type="number" id="celular" name="celular" value="{{providers.4}}" required>
                             <label for="celular">Celular</label>
                         </div>
                         <div class="fitem fitem2-4">
-                            <input type="text" id="location" name="location" required>
+                            <input type="text" id="location" name="location" value="{{providers.6}}" required>
                             <label for="location">Ubicación</label>
                         </div>
                     </div>
                     <div class="frow frow-3">
-                        <textarea name="products" id="products" cols="30" rows="10" class="fitem fitem3-1" placeholder="Productos Ofrecidos"></textarea>
+                        <textarea name="products" id="products" cols="30" rows="10" class="fitem fitem3-1" placeholder="Productos Ofrecidos">{{providers.2}}</textarea>
                     </div>
                     <div class="frow frow-4">
                         <div class="fdiv fdiv-2">

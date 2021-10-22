@@ -237,6 +237,7 @@ textarea {
     font-family: var(--font-family);
     padding: 0 16px;
     outline: none;
+    pointer-events: none;
 }
 
 textarea {
